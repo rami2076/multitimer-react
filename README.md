@@ -8,6 +8,8 @@ I found out about Vite and I wanted to have a boilerplate for the technologies t
 
 ## Installation
 
+If not yarn then run `brew install yarn`
+
 Clone the repo and run `yarn install`
 
 or Run command
