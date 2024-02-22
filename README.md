@@ -32,8 +32,6 @@ After the successfull installation of the packages: `yarn dev`
 4. Enable formatOnSave of vs code
 5. Open a .tsx file and check if the bottom right corners of vs code have Eslint and Prettier with a double tick
 
-![Screenshot (253)_LI](https://user-images.githubusercontent.com/52120562/162486286-7383a737-d555-4f9b-a4dd-c4a81deb7b96.jpg)
-
 If Everything is Good Then It Should Work, but let me new if something else happens
 
 Made with ❤️ by theSwordBreaker(we Destory all types of sword ⚡)
