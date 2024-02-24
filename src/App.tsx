@@ -1,5 +1,3 @@
-// import './App.css';
-
 import InputTime from './InputTime';
 import CustomInputTime from './CustomInputTime';
 

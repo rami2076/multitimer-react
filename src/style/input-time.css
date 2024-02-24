@@ -49,15 +49,15 @@ label {
     top: 4.5px;
 }
 
-.label.lbl-hrs {
+.label.label-hours {
     left: 20px;
 }
 
-.label.lbl-min {
+.label.label-minutes {
     left: 14px;
 }
 
-.label.lbl-sec {
+.label.label-seconds {
     left: 13px;
 }
 
