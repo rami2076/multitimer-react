@@ -41,24 +41,13 @@ label {
     flex-direction: column;
     justify-content: center;
     position: relative;
+    align-items: center;
 }
 
 .label {
     font-size: 0.55rem;
     position: absolute;
     top: 4.5px;
-}
-
-.label.label-hours {
-    left: 20px;
-}
-
-.label.label-minutes {
-    left: 14px;
-}
-
-.label.label-seconds {
-    left: 13px;
 }
 
 /* Chrome, Safari, Edge, Opera */

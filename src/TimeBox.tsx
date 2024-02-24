@@ -6,12 +6,10 @@ export interface TimeBoxProps {
 }
 
 function TimeBox(prop: TimeBoxProps) {
-  const labelClass = `label-${prop.name}`;
-
   return (
     <>
       <label htmlFor={prop.name}>
-        <span className={`label ${labelClass}`}>{prop.name}</span>
+        <span className={`label`}>{prop.name}</span>
         <input
           name={prop.name}
           max={prop.max}
