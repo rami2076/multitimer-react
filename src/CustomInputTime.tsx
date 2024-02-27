@@ -6,8 +6,8 @@ function CustomInputTime() {
   return (
     <>
       <div>
-        <div className={'time_wrapper'}>
-          <div className={'time_input'}>
+        <div className={'time-wrapper'}>
+          <div className={'time-input'}>
             <TimeBox name={'hours'} defaultValue={'0'} min={0} max={10}></TimeBox>
             <span>:</span>
             <TimeBox name={'minutes'} defaultValue={'0'} min={0} max={59}></TimeBox>

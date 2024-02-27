@@ -7,16 +7,16 @@ body {
     font-family: sans-serif;
 }
 
-.time_wrapper {
+.time-wrapper {
     width: fit-content;
     margin: 0 auto;
     /*   background: pink; */
     position: relative;
     top: 150px;
-    transform: scale(1.5);
+    /*transform: scale(1.5);*/
 }
 
-.time_input {
+.time-input {
     border: 2px solid var(--inactive);
     width: fit-content;
     color: #86c288;
@@ -25,7 +25,7 @@ body {
     align-items: center;
 }
 
-input {
+input.time-box {
     width: 60px;
     height: 60px;
     border: none;
@@ -36,7 +36,7 @@ input {
     color: #132c14;
 }
 
-label {
+label.time-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,43 +44,43 @@ label {
     align-items: center;
 }
 
-.label {
+.label.time-box {
     font-size: 0.55rem;
     position: absolute;
     top: 4.5px;
 }
 
 /* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.time-box input::-webkit-outer-spin-button,
+.time-box input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
 /* Firefox */
-input[type="number"] {
+input[type="number"].time-box {
     -moz-appearance: textfield;
 }
 
-.time_input,
-input {
+.time-input,
+input.time-box {
     border-radius: 8px;
     font-size: 1.5rem;
 }
 
-input:focus {
+input:focus.time-box {
     outline: 3px solid var(--active);
 }
 
-input:focus + .label {
+input:focus + .label.time-box {
     color: var(--active);
 }
 
-input.invalid:focus {
+input.invalid:focus .time-box {
     outline: 3px solid red;
 }
 
-input.invalid:focus + .label {
+input.invalid:focus + .label.time-box {
     color: red;
 }
 
