@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 export interface TimeBoxProps {
   name: string;
   defaultValue: string;
@@ -6,6 +8,8 @@ export interface TimeBoxProps {
 }
 
 function TimeBox(prop: TimeBoxProps) {
+  const [value, setValue] = useState(prop.defaultValue);
+
   return (
     <>
       <label className={'time-box'} htmlFor={prop.name}>
@@ -17,6 +21,8 @@ function TimeBox(prop: TimeBoxProps) {
           min={prop.min}
           type="number"
           defaultValue={prop.defaultValue}
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
         ></input>
       </label>
     </>
