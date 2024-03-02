@@ -1,14 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export interface TimeBoxProps {
   name: string;
   defaultValue: string;
   max: number;
   min: number;
+
+  setValueState(value: string): void;
 }
 
 function TimeBox(prop: TimeBoxProps) {
   const [value, setValue] = useState(prop.defaultValue);
+  useEffect(() => {
+    prop.setValueState(value);
+  }, [value]);
 
   return (
     <>
