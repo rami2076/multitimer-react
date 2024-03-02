@@ -5,6 +5,7 @@ import InputTime from './InputTime';
 
 function App() {
   const [time, setTime] = useState('');
+  const [text, setText] = useState('');
 
   return (
     <>
@@ -13,8 +14,10 @@ function App() {
       </div>
       <InputTime />
       <CustomInputTime setTime={(val: string) => setTime(val)} />
-      <button onClick={() => console.log(time)}>button</button>
-      <textarea></textarea>
+      <button onClick={() => (text ? setText(text + '\n' + time) : setText(time))}>
+        button
+      </button>
+      <textarea onChange={(event) => setText(event.target.value)} value={text}></textarea>
     </>
   );
 }
