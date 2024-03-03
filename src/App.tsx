@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import CustomInputTime from './CustomInputTime';
 import InputTime from './InputTime';
+import { Timer } from './Timer';
 
 function App() {
   const [time, setTime] = useState('');
@@ -18,6 +19,7 @@ function App() {
         button
       </button>
       <textarea onChange={(event) => setText(event.target.value)} value={text}></textarea>
+      <Timer />
     </>
   );
 }
