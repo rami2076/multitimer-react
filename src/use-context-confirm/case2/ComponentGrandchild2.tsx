@@ -1,7 +1,7 @@
-import { useMyContext } from './MyContext2';
+import { useMyContext2 } from './MyContext2';
 
 export function ComponentGrandchild2() {
-  const count = useMyContext();
+  const count = useMyContext2();
 
   return (
     <div>

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { ComponentParent } from './use-context-confirm/case1/ComponentParent';
 import { MyContext } from './use-context-confirm/case1/MyContext';
 import { ComponentParent2 } from './use-context-confirm/case2/ComponentParent2';
-import { CountProvider } from './use-context-confirm/case2/MyContext2';
+import { CountProvider2 } from './use-context-confirm/case2/MyContext2';
 
 export function Timer() {
   const [time, setTime] = useState(5);
@@ -26,9 +26,9 @@ export function Timer() {
         <ComponentParent />
       </MyContext.Provider>
 
-      <CountProvider>
+      <CountProvider2>
         <ComponentParent2 />
-      </CountProvider>
+      </CountProvider2>
 
       <CountProvider>
         <ComponentParent2 />

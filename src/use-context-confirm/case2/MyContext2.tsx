@@ -8,7 +8,7 @@ export interface Context2 {
 
 export const MyContext2 = createContext<Context2 | null>(null);
 
-export function useMyContext() {
+export function useMyContext2() {
   return useContext(MyContext2);
 }
 
@@ -16,7 +16,7 @@ type Props = {
   children: JSX.Element;
 };
 
-export function CountProvider({ children }: Props) {
+export function CountProvider2({ children }: Props) {
   const [time, setTime] = useState(5);
   useEffect(() => {
     const id = setInterval(() => {
