@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { MyContext } from './use-context-confirm/MyContext';
+import { ComponentParent } from './use-context-confirm/ComponentParent';
 
 export function Timer() {
   const [time, setTime] = useState(5);
@@ -9,5 +11,17 @@ export function Timer() {
     return () => clearInterval(id);
   }, [time]);
 
-  return <p>Time: {time}</p>;
+  return (
+    <>
+      <p>Time: {time}</p>
+
+      <MyContext.Provider value={1}>
+        <ComponentParent />
+      </MyContext.Provider>
+
+      <MyContext.Provider value={time}>
+        <ComponentParent />
+      </MyContext.Provider>
+    </>
+  );
 }
