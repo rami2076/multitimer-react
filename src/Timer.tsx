@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { MyContext } from './use-context-confirm/MyContext';
-import { ComponentParent } from './use-context-confirm/ComponentParent';
+
+import { ComponentParent } from './use-context-confirm/case1/ComponentParent';
+import { MyContext } from './use-context-confirm/case1/MyContext';
 
 export function Timer() {
   const [time, setTime] = useState(5);
