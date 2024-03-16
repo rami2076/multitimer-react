@@ -1,19 +1,37 @@
 import { useEffect, useState } from 'react';
 
+import beep from './assets/beep.mp3';
 import { ComponentParent } from './use-context-confirm/case1/ComponentParent';
 import { MyContext } from './use-context-confirm/case1/MyContext';
 import { ComponentParent2 } from './use-context-confirm/case2/ComponentParent2';
 import { CountProvider2 } from './use-context-confirm/case2/MyContext2';
-import { CountProvider3 } from './use-context-confirm/case3/MyContext3';
 import { ComponentParent3 } from './use-context-confirm/case3/ComponentParent3';
+import { CountProvider3 } from './use-context-confirm/case3/MyContext3';
 
 export function Timer() {
   const [time, setTime] = useState(5);
+  const [isBeep, setIsBeep] = useState(true);
+  const [intervalId, setIntervalId] = useState<number | null>(null);
+
+  // const [interval, setInterval] = useState(1000);
+
   useEffect(() => {
-    const id = setInterval(() => {
-      setTime(time - 1);
-    }, 1000);
-    return () => clearInterval(id);
+    let id: number | null;
+    if (time > 0 && isBeep) {
+      id = setInterval(() => {
+        setTime(time - 1);
+      }, 1000);
+      setIntervalId(id);
+    } else if (time === 0 && isBeep) {
+      setIsBeep(false);
+      clearInterval(intervalId as number);
+      const music = new Audio(beep);
+      music.currentTime = 0;
+      music.play();
+    }
+    return () => {
+      if (id) clearInterval(id);
+    };
   }, [time]);
 
   return (
