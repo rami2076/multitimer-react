@@ -11,6 +11,8 @@ export interface TimeBoxProps {
 
 function TimeBox(prop: TimeBoxProps) {
   const [value, setValue] = useState(prop.defaultValue);
+  const zeroPadFormatter = new Intl.NumberFormat('ja', { minimumIntegerDigits: 2 });
+
   useEffect(() => {
     prop.setValueState(value);
   }, [value]);
@@ -25,8 +27,7 @@ function TimeBox(prop: TimeBoxProps) {
           max={prop.max}
           min={prop.min}
           type="number"
-          defaultValue={prop.defaultValue}
-          value={value}
+          value={zeroPadFormatter.format(Number(value))}
           onChange={(event) => setValue(event.target.value)}
         ></input>
       </label>
