@@ -7,7 +7,7 @@ interface ButtonProps {
 }
 
 const Button = ({ onClick, disabled, text }: ButtonProps) => {
-  const buttonStyle = disabled ? styled.disabledButton : styled.visibleButton;
+  const buttonStyle: string = disabled ? styled.disabledButton : styled.visibleButton;
   return (
     <button className={buttonStyle} onClick={onClick} disabled={disabled}>
       {text}
