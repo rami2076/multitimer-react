@@ -1,7 +1,7 @@
 import React from 'react';
 
-function InputTime() {
+function DefaultTimeInput() {
   return <input type="time"></input>;
 }
 
-export default InputTime;
+export default DefaultTimeInput;

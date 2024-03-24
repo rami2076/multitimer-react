@@ -1,14 +1,14 @@
-import './style/input-time.css';
+import './input-time.css';
 
 import { useEffect, useState } from 'react';
 
 import TimeBox from './TimeBox';
 
-export interface CustomInputTimeInterface {
+export interface HMSTimeInputProps {
   setTime(time: string): void;
 }
 
-function CustomInputTime(props: CustomInputTimeInterface) {
+function HMSTimeInput(props: HMSTimeInputProps) {
   const defaultValue = '0';
   const [hours, setHours] = useState(defaultValue);
   const [minutes, setMinutes] = useState(defaultValue);
@@ -53,4 +53,4 @@ function CustomInputTime(props: CustomInputTimeInterface) {
   );
 }
 
-export default CustomInputTime;
+export default HMSTimeInput;

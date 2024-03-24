@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import beep from './assets/beep.mp3';
-import { ComponentParent } from './use-context-confirm/case1/ComponentParent';
-import { MyContext } from './use-context-confirm/case1/MyContext';
-import { ComponentParent2 } from './use-context-confirm/case2/ComponentParent2';
-import { CountProvider2 } from './use-context-confirm/case2/MyContext2';
-import { ComponentParent3 } from './use-context-confirm/case3/ComponentParent3';
-import { CountProvider3 } from './use-context-confirm/case3/MyContext3';
-import Button from './components/atoms/button/Button';
+import beep from '../../../assets/beep.mp3';
+import { ComponentParent } from '../../../use-context-confirm/case1/ComponentParent';
+import { MyContext } from '../../../use-context-confirm/case1/MyContext';
+import { ComponentParent2 } from '../../../use-context-confirm/case2/ComponentParent2';
+import { CountProvider2 } from '../../../use-context-confirm/case2/MyContext2';
+import { ComponentParent3 } from '../../../use-context-confirm/case3/ComponentParent3';
+import { CountProvider3 } from '../../../use-context-confirm/case3/MyContext3';
+import Button from '../button/Button';
 
 export function Timer() {
   const [time, setTime] = useState(5);

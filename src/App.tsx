@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import CustomInputTime from './CustomInputTime';
-import InputTime from './InputTime';
-import { Timer } from './Timer';
+import HMSTimeInput from './components/atoms/timer/input/HMSTimeInput';
+import DefaultTimeInput from './components/atoms/timer/input/DefaultTimeInput';
+import { Timer } from './components/atoms/timer/Timer';
 
 function App() {
   const [time, setTime] = useState('');
@@ -13,8 +13,8 @@ function App() {
       <div className="App">
         <h1>Hello World</h1>
       </div>
-      <InputTime />
-      <CustomInputTime setTime={(val: string) => setTime(val)} />
+      <DefaultTimeInput />
+      <HMSTimeInput setTime={(val: string) => setTime(val)} />
       <button onClick={() => (text ? setText(text + '\n' + time) : setText(time))}>
         button
       </button>
