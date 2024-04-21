@@ -12,12 +12,12 @@ import Button from '../button/Button';
 export function Timer() {
   const [time, setTime] = useState(5);
   const [isBeep, setIsBeep] = useState(true);
-  const [intervalId, setIntervalId] = useState<number | null>(null);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
   // const [interval, setInterval] = useState(1000);
 
   useEffect(() => {
-    let id: number | null;
+    let id: NodeJS.Timeout | null;
     if (time > 0 && isBeep) {
       id = setInterval(() => {
         setTime(time - 1);
@@ -25,7 +25,9 @@ export function Timer() {
       setIntervalId(id);
     } else if (time === 0 && isBeep) {
       setIsBeep(false);
-      clearInterval(intervalId as number);
+      if (intervalId !== null) {
+        clearInterval(intervalId);
+      }
       const music = new Audio(beep);
       music.currentTime = 0;
       music.play();
