@@ -9,15 +9,15 @@ import { ComponentParent3 } from '../../../use-context-confirm/case3/ComponentPa
 import { CountProvider3 } from '../../../use-context-confirm/case3/MyContext3';
 import Button from '../button/Button';
 
+// import Sound from 'react-native-sound';
+
 export function Timer() {
   const [time, setTime] = useState(5);
   const [isBeep, setIsBeep] = useState(true);
-  const [intervalId, setIntervalId] = useState<number | null>(null);
-
-  // const [interval, setInterval] = useState(1000);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    let id: number | null;
+    let id: NodeJS.Timeout | null;
     if (time > 0 && isBeep) {
       id = setInterval(() => {
         setTime(time - 1);
@@ -25,10 +25,13 @@ export function Timer() {
       setIntervalId(id);
     } else if (time === 0 && isBeep) {
       setIsBeep(false);
-      clearInterval(intervalId as number);
+      if (intervalId !== null) {
+        clearInterval(intervalId);
+      }
       const music = new Audio(beep);
       music.currentTime = 0;
       music.play();
+      // successSound.play();
     }
     return () => {
       if (id) clearInterval(id);
