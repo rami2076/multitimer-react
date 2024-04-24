@@ -9,12 +9,12 @@ import { ComponentParent3 } from '../../../use-context-confirm/case3/ComponentPa
 import { CountProvider3 } from '../../../use-context-confirm/case3/MyContext3';
 import Button from '../button/Button';
 
+// import Sound from 'react-native-sound';
+
 export function Timer() {
   const [time, setTime] = useState(5);
   const [isBeep, setIsBeep] = useState(true);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
-
-  // const [interval, setInterval] = useState(1000);
 
   useEffect(() => {
     let id: NodeJS.Timeout | null;
@@ -31,6 +31,7 @@ export function Timer() {
       const music = new Audio(beep);
       music.currentTime = 0;
       music.play();
+      // successSound.play();
     }
     return () => {
       if (id) clearInterval(id);

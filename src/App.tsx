@@ -13,7 +13,12 @@ function App() {
     <>
       <div className="App">
         <h1>Hello World</h1>
-        <img width={300} height={213} src={blackBear.src} alt={'Black bear'}></img>
+        <img
+          width={300}
+          height={213}
+          src={(blackBear as any).src}
+          alt={'Black bear'}
+        ></img>
       </div>
       <DefaultTimeInput />
       <HMSTimeInput setTime={(val: string) => setTime(val)} />

@@ -1,4 +1,4 @@
-import styled from './Button.module.css';
+import styled from './Button.module.scss';
 
 interface ButtonProps {
   onClick: () => void;
